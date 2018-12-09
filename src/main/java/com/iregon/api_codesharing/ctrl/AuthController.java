@@ -7,11 +7,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import javax.ws.rs.GET;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.POST;
@@ -28,7 +23,6 @@ public class AuthController {
 
     @Path("login/{clientId}")
     @Produces (MediaType.APPLICATION_JSON)
-    @ResponseBody
     public String authUser(/*@PathVariable("name") String name*/) throws IOException, ClassNotFoundException, SQLException {
         DBInteractionImpl db = new DBInteractionImpl();
         db.connect();
